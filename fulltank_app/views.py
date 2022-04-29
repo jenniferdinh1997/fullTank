@@ -8,7 +8,6 @@ from django.http import HttpResponse
 def home(request):
   return render(request, 'home.html')
 
-
 # Create your views here.
 def stations_index(request):
-  return render(request, '', {'stations': stations})
+  return render(request, 'stations/index.html', {'stations': stations})
