@@ -25,7 +25,7 @@ Python, Django, Heroku, AWS(?)
 
 -link to deployed app: add link
 -link to Trello board: https://trello.com/b/rIgrWE8p/fulltank
--link to pitch deck: https://docs.google.com/presentation/d/1WvHoN5MNaRembgcoog5p0GtivVCOZSzvfPyeevzy08g/edit#slide=id.g1c4f82d235_3_89
+-link to pitch deck: https://docs.google.com/presentation/d/1LF-O2PsNUlqlJmMvtsfly0gMsAxyj7ULpR77ijJhF1I/edit?usp=sharing
 ## Next Steps:
 
 - Add a map API
