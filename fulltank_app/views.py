@@ -10,4 +10,5 @@ def home(request):
 
 # Create your views here.
 def stations_index(request):
+  stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
