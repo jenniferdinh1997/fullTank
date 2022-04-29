@@ -21,10 +21,10 @@ class Station(models.Model):
 
 
   def __str__(self):
-    str = f"{self.name} on {self.date} is priced at {self.price}"
+    str = f"{self.name} on {self.date} is priced at {self.price} id: {self.id}"
     if self.cards_accepted == 'TRUE':
       str = str + f" and they do accept card payments"
     else:
-      str = str + f" and they do now accept card payments"
+      str = str + f" and they do not accept card payments"
     return str
 
