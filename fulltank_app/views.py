@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Stations
+from .models import Station
 
 # Add the following import
 from django.http import HttpResponse
