@@ -28,3 +28,6 @@ class Station(models.Model):
       str = str + f" and they do not accept card payments"
     return str
 
+  def get_absolute_url(self):
+    return reverse('detail', kwargs={'station_id': self.id})
+

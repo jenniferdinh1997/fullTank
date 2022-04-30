@@ -14,6 +14,10 @@ class StationCreate(CreateView):
   model = Station
   fields = '__all__'
 
+class StationDelete(DeleteView):
+  model = Station
+  success_url = '/stations/'
+
 def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
