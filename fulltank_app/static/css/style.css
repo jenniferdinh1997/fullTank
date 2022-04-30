@@ -85,3 +85,9 @@ body,html {
     background-color: #4f5050;
     text-decoration: none;
   }
+
+
+  form {
+    padding: 100px;
+    padding-left: 39%;
+  }
