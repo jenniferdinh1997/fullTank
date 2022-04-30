@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>index</h1>
+<h1>All Gas Stations</h1>
+
+{% for station in stations %}
+<p>Name: {{ station.name }}</p>
+<p>Company: {{ station.company }}</p>
+<p>Date: {{ station.date }}</p>
+<p>Price: {{ station.price }}</p>
+<p>Cards Accepted: {{ station.cards_accepted }}</p>
+<p>Zip Code: {{ station.zipcode }}</p>
+<a href="{% url 'detail' %}">See Details</a>
+{% endfor %}
+
 {% endblock %}
