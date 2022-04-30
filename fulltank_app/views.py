@@ -22,7 +22,7 @@ def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
 
-def stations_detail(request):
+def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
   return render(request, 'stations/detail.html', {'station': station})
 
