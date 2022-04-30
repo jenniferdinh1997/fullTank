@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Station
-from django.views.generic.edit import CreateView, Deleteview
+from django.views.generic.edit import CreateView, DeleteView
 
 # Add the following import
 from django.http import HttpResponse
