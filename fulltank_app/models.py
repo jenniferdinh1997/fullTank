@@ -11,7 +11,7 @@ class Station(models.Model):
   name = models.CharField(max_length = 100)
   company = models.CharField(max_length = 100)
   date = models.DateField('Date Of Visit')
-  price = models.IntegerField()
+  price = models.FloatField()
   cards_accepted = models.CharField(
     max_length = 1,
       choices = CARDS_ACCEPTED,
