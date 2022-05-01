@@ -1,5 +1,63 @@
-{% extends 'base.html' %} 
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <!-- header for navigation for all pages but not about page -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top"><img src="{% static 'img/logoW.svg' %}" alt="fullTank" height="25" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="{% url 'index' %}">All Stations</a>
+                      </li>
+                      <li>
+                        <a class="nav-link" href="{% url 'stations_create' %}">Add Station</a>
+                      </l>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'about' %}" rel="nofollow" href="">About</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
  <!-- firstsection -->
 <section class="content-section text-center">
   <div>
@@ -68,4 +126,27 @@
   </div>
 </section>
 
-{% endblock content %}
+
+<footer class="footer text-center">
+  <div class="container px-4 px-lg-5">
+      <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+              <a class="social-link rounded-circle text-white mr-3" href=""><i class="fa-brands fa-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+              <a class="social-link rounded-circle text-white mr-3"  href="#!"><i class="icon-social-facebook"></i></a>
+          </li>
+          <li class="list-inline-item">
+              <a class="social-link rounded-circle text-white" href=""><i class="fa-brands fa-instagram"></i></a>
+          </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; FullTank</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -32,7 +32,22 @@ body,html {
     }
   }
   
+
 /* ####IconsSectionSection2 */
+/* ###about page  */
+ .masthead2{
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://www.utslbd.net/wp-content/uploads/2019/05/our-team.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
 
   .service-icon {
     background-color: #fff;
@@ -62,8 +77,45 @@ body,html {
   .section1 {
     padding: 70px 20px;
   }
+ /* ###fform */
 
-
+ #new-form {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, minmax(auto, 22rem));
+    padding: 100px;
+    padding-left: 39%;
+  }
+  
+  #new-form *{
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  #new-form input[type="submit"] {
+    grid-column: span 2;
+    width: 10rem;
+    margin-left: auto;
+  }
+  
+  .button {
+    display: inline-block;
+    background: #151515;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    -webkit-transition: all ease-in-out 300ms;
+    transition: all ease-in-out 300ms;
+  }
+  .button:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translate(0px, -10px) scale(1.2);
+            transform: translate(0px, -10px) scale(1.2);
+  }
   /* #####footersection */
 
   footer.footer {
@@ -86,8 +138,33 @@ body,html {
     text-decoration: none;
   }
 
-
-  form {
-    padding: 100px;
-    padding-left: 39%;
+ 
+.service-icon2 {
+    border-radius: 70px;
+    height: 8rem;
+    width: 8rem;
+    display: block;
+    line-height: 7.5rem;
+    font-size: 2.25rem;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
   }
+
+
+  /* #cards for /stations */
+
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  
+
+    .title{
+      margin-top: 5%;
+    }
