@@ -4,7 +4,7 @@ body,html {
   height: 100%;
 }
 
-/* ###SEction1 */
+/* ###SEction1 for home page*/
 .masthead {
     min-height: 30rem;
     position: relative;
@@ -35,7 +35,7 @@ body,html {
 
 /* ####IconsSectionSection2 */
 /* ###about page  */
- .masthead2{
+.masthead2{
     min-height: 30rem;
     position: relative;
     display: table;
@@ -49,7 +49,7 @@ body,html {
     background-size: cover;
  }
 
-  .service-icon {
+.service-icon {
     background-color: #fff;
     color: #4f5050;
     height: 7rem;
@@ -60,7 +60,7 @@ body,html {
    
   }
 
-  #icons {
+#icons {
     display: inline-block;
     background: transparent;
     color: black;
@@ -74,12 +74,12 @@ body,html {
   }
 
 
-  .section1 {
+.section1 {
     padding: 70px 20px;
   }
  /* ###fform */
 
- #new-form {
+#new-form {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(auto, 22rem));
@@ -87,19 +87,19 @@ body,html {
     padding-left: 39%;
   }
   
-  #new-form *{
+#new-form *{
     font-size: 15px;
     padding: 5px;
     border-radius: 5px;
   }
   
-  #new-form input[type="submit"] {
+#new-form input[type="submit"] {
     grid-column: span 2;
     width: 10rem;
     margin-left: auto;
   }
   
-  .button {
+.button {
     display: inline-block;
     background: #151515;
     color: #fff;
@@ -111,18 +111,19 @@ body,html {
     -webkit-transition: all ease-in-out 300ms;
     transition: all ease-in-out 300ms;
   }
-  .button:hover {
+.button:hover {
     box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
     -webkit-transform: translate(0px, -10px) scale(1.2);
             transform: translate(0px, -10px) scale(1.2);
   }
   /* #####footersection */
 
-  footer.footer {
+footer.footer {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
-  footer.footer .social-link {
+
+footer.footer .social-link {
     display: block;
     text-decoration: none;
     height: 4rem;
@@ -133,7 +134,8 @@ body,html {
     transition: 0.15s ease-in-out;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.464);
   }
-  footer.footer .social-link:hover {
+
+footer.footer .social-link:hover {
     background-color: #4f5050;
     text-decoration: none;
   }
@@ -152,7 +154,7 @@ body,html {
 
   /* #cards for /stations */
 
-  .bd-placeholder-img {
+.bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
     -webkit-user-select: none;
@@ -160,15 +162,31 @@ body,html {
     user-select: none;
   }
 
-    .bd-placeholder-img-lg {
+.bd-placeholder-img-lg {
       font-size: 3.5rem;
     }
   
 
-    .title{
-      margin-top: 8%;
+.title{
+      margin-top: 10%;
     }
 /* ###form for deletion */
-    #deleteform {
+#deleteform {
       text-align: center;
     }
+
+/* Navigation transition (not the home page)*/
+#color {
+  color: #151515;
+  text-transform: uppercase;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+  #color:hover{
+  -webkit-transform: translate(0px, -2px) scale(1.1);
+  transform: translate(0px, -2px) scale(1.1);
+  }
