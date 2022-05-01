@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
+ {% block content %}
+ 
+<div class="title">
+  <h1>Delete Station</h1>
+</div>
 
-
-{% block content %}
-<h1>Delete Station</h1>
-
-<h4>Are you sure you want to delete <span class="teal-text">{{ object.name }}</span>?</h4>
+<h4>
+  Are you sure you want to delete
+  <span class="teal-text">{{ object.name }}</span>?
+</h4>
 
 <form action="" method="POST">
   {% csrf_token %}
-  <input type="submit" value="Yes - Delete!" class="btn">
+  <input type="submit" value="Yes - Delete!" class="btn" />
   <a href="{% url 'detail' station.id %}">Cancel</a>
 </form>
 
