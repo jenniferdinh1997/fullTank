@@ -177,9 +177,7 @@ footer.footer .social-link:hover {
 
 /* Navigation transition (not the home page)*/
 #color {
-  color: #151515;
-  text-transform: uppercase;
-  padding: 8px 20px;
+  color: #3f3f3f;
   border-radius: 5px;
   cursor: pointer;
   -webkit-transition: all ease-in-out 200ms;
@@ -187,6 +185,6 @@ footer.footer .social-link:hover {
 }
 
   #color:hover{
-  -webkit-transform: translate(0px, -2px) scale(1.1);
-  transform: translate(0px, -2px) scale(1.1);
+  -webkit-transform: translate(0px, -2px) scale(1.0);
+  transform: translate(0px, -2px) scale(1.0);
   }
