@@ -166,5 +166,9 @@ body,html {
   
 
     .title{
-      margin-top: 5%;
+      margin-top: 8%;
+    }
+/* ###form for deletion */
+    #deleteform {
+      text-align: center;
     }
