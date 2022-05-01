@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from .models import Station
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-# Add the following import
-from django.http import HttpResponse
+# # Add the following import
+# from django.http import HttpResponse
 
 # Define the home view
 def home(request):
@@ -18,6 +18,11 @@ class StationDelete(DeleteView):
   model = Station
   success_url = '/stations/'
 
+class PriceUpdate(UpdateView):
+  model = Station
+  fields = ["price"]
+
+
 def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
@@ -28,3 +33,4 @@ def stations_detail(request, station_id):
 
 def about(request):
   return render(request, 'about.html')
+
