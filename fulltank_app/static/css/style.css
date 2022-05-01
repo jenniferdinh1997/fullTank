@@ -31,7 +31,7 @@ body,html {
       font-size: 5.5rem;
     }
   }
-  
+
 
 /* ####IconsSectionSection2 */
 /* ###about page  */
@@ -57,7 +57,7 @@ body,html {
     display: block;
     line-height: 7.5rem;
     font-size: 2.25rem;
-   
+
   }
 
 #icons {
@@ -86,19 +86,19 @@ body,html {
     padding: 100px;
     padding-left: 39%;
   }
-  
+
 #new-form *{
     font-size: 15px;
     padding: 5px;
     border-radius: 5px;
   }
-  
+
 #new-form input[type="submit"] {
     grid-column: span 2;
     width: 10rem;
     margin-left: auto;
   }
-  
+
 .button {
     display: inline-block;
     background: #151515;
@@ -140,7 +140,7 @@ footer.footer .social-link:hover {
     text-decoration: none;
   }
 
- 
+
 .service-icon2 {
     border-radius: 70px;
     height: 8rem;
@@ -165,7 +165,7 @@ footer.footer .social-link:hover {
 .bd-placeholder-img-lg {
       font-size: 3.5rem;
     }
-  
+
 
 .title{
       margin-top: 10%;
@@ -189,4 +189,13 @@ footer.footer .social-link:hover {
   #color:hover{
   -webkit-transform: translate(0px, -2px) scale(1.1);
   transform: translate(0px, -2px) scale(1.1);
+  }
+
+  .skills {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 70px;
+    margin-top: 150px;
   }
