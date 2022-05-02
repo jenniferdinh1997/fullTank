@@ -93,20 +93,19 @@ body,html {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(2, minmax(auto, 22rem));
-    padding: 100px;
-    padding-left: 39%;
+    padding: 60px;
+    padding-left: 36%;
   }
 
 #new-form *{
     font-size: 15px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 2px;
+   
   }
 
 #new-form input[type="submit"] {
     grid-column: span 2;
     width: 10rem;
-    margin-left: auto;
   }
 
 .button {

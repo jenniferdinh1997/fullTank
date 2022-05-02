@@ -1,9 +1,8 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-
-<div class="title container px-4 px-lg-5 text-center text-black">
-  <h1>Add Gas Station</h1>
+<div class="title container text-center text-black">
+  <h1>Add Station</h1>
 </div>
 
 <!-- form -->
@@ -16,7 +15,8 @@
     <table>
       {{ form.as_table }}
     </table>
-    <input type="submit" value="Submit" class="button" />
+    <br>
+    <input type="submit" value="Submit" class="btn btn-secondary" />
   </form>
 </div>
 <!-- content section -->
@@ -31,5 +31,5 @@
     </div>
   </div>
 </section>
-<br />
+<br>
 {% endblock content %}

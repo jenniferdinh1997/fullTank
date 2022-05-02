@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
+<div id="deleteform">
+    <div class="title container text-center text-black">
 <h1>Log In</h1>
+<br><br>
+</div>
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" class="btn" value="login">
+    <input type="submit" class="btn btn-secondary" value="login">
     <input type="hidden" name="next" value="{{ next }}">
 </form>
+</div>
 {% endblock %}
