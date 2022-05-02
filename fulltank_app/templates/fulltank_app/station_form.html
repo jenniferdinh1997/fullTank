@@ -1,15 +1,17 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<div class="title container text-center text-black">
-  <h1>Add Station</h1>
-</div>
-
 <!-- form -->
 <div class="content-section px-4 px-lg-5">
   {% if object %}
-  <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
-  {% else %} {% endif %}
+  <div class="techs">
+  <h1>Update <span class="teal-text">{{object.name}}</span> price</h1>
+  </div>
+  {% else %} 
+  <div class="techs text-center text-black">
+    <h1>Add Station</h1>
+  </div>
+  {% endif %}
   <form id="new-form" action="" method="POST">
     {% csrf_token %}
     <table>
@@ -23,9 +25,8 @@
 <section class="content-section bg-light section1" id="">
   <div class="container px-4 px-lg-5 text-center">
     <div class="row gx-4 gx-lg-5 justify-content-center">
-      <div class="col-lg-10">
+      <div class=" techs col-lg-10">
         <h1>Making a better World</h1>
-        <br />
         <p class="lead mb-5">sfjfdf dsodksd dff f dfdokg nff</p>
       </div>
     </div>

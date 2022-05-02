@@ -4,6 +4,10 @@ body,html {
   height: 100%;
 }
 
+h1, h2, p, h3, h4 , h5{
+  font-family: 'Eczar', serif;
+}
+
 /* ###SEction1 for home page*/
 .masthead {
     min-height: 30rem;
@@ -13,7 +17,7 @@ body,html {
     height: auto;
     padding-top: 8rem;
     padding-bottom: 8rem;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("https://wallpapercave.com/wp/wp6696517.jpg");
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("/static/img/gas.jpeg");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -151,13 +155,14 @@ footer.footer .social-link:hover {
 
 
 .service-icon2 {
-    border-radius: 70px;
-    height: 8rem;
-    width: 8rem;
+    border-radius: 120px;
+    height: 15rem;
+    width: 15rem;
     display: block;
     line-height: 7.5rem;
     font-size: 2.25rem;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.464);
   }
 
 
@@ -219,6 +224,8 @@ footer.footer .social-link:hover {
   margin-top: 20px;
   justify-content: space-between;
 }
+
+
 
   /*
   .name-cards {
