@@ -39,7 +39,6 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
-
 class StationDelete(LoginRequiredMixin, DeleteView):
   model = Station
   success_url = '/stations/'

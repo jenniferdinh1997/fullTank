@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="deleteform">
-    <div class="title container text-center text-black">
+    <div class=" techs title container text-center text-black">
 <h1>Log In</h1>
-<br><br>
 </div>
+<br>
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{ form.as_p }}
