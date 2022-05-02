@@ -12,7 +12,7 @@ def home(request):
 # Create your views here.
 class StationCreate(CreateView):
   model = Station
-  fields = '__all__'
+  fields = ['name', 'company', 'date', 'price', 'cards_accepted', 'zipcode']
 
 class StationDelete(DeleteView):
   model = Station
@@ -21,7 +21,6 @@ class StationDelete(DeleteView):
 class PriceUpdate(UpdateView):
   model = Station
   fields = ["price"]
-
 
 def stations_index(request):
   stations = Station.objects.all()
