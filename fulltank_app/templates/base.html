@@ -44,24 +44,32 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item active">
-                        <a class="nav-link" id="color" aria-current="page" href="{% url 'index' %}" >All Stations</a>
-                      </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="color" href="{% url 'about' %}" rel="nofollow" href="">About</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" id="color" aria-current="page" href="{% url 'index' %}" >All Stations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="color" href="{% url 'home' %}">Home</a>
+                  </li>
+                  {% if user.is_authenticated %}
                       <li>
                         <a class="nav-link" id="color" href="{% url 'stations_create' %}">Add Station</a>
-                      </l>
-                      <li class="nav-item">
-                        <a class="nav-link" id="color" href="{% url 'about' %}" rel="nofollow" href="">About</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" id="color" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" id="color" href="{% url 'logout' %}">Logout</a>
                       </li>
+
+                      {% else %}
                       <li class="nav-item">
                         <a class="nav-link" id="color" href="{% url 'signup' %}">Sign Up</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" id="color" href="{% url 'login' %}">Login</a>
                       </li>
+
+                      {% endif %}
                 </ul>
             </div>
         </div>
