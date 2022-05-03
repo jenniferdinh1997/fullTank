@@ -32,7 +32,7 @@ class SearchResultsView(ListView):
 
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
-  fields = ['name', 'company', 'date', 'price', 'cards_accepted', 'zipcode']
+  fields = ['name', 'company', 'date', 'regular', 'midgrade', 'premium', 'cards_accepted', 'zipcode']
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -61,11 +61,12 @@ class StationDelete(LoginRequiredMixin, DeleteView):
 
 class PriceUpdate(LoginRequiredMixin, UpdateView):
   model = Station
-  fields = ["price"]
+  fields = ["regular", "midgrade", "premium"]
 
 def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
+  
 @login_required
 def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
