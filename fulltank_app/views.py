@@ -20,6 +20,10 @@ def home(request):
 class SearchResultsView(ListView):
     model = Station
     template_name = 'search_results.html'
+    
+    # def get_queryset(self):
+    #   return Station.objects.filter(name_icontain)
+    
 
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
