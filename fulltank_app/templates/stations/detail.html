@@ -11,8 +11,8 @@
       <div class="card-body">
         <h5 class="card-title">{{station.name}}</h5>
         <p class="card-text">
-          The gas price for {{station.name}} on {{station.date}} was
-          ${{station.price}}
+          The gas prices for {{station.name}} on {{station.date}} were
+          ${{station.regular}} for regular, ${{station.midgrade}} for mid-grade, and ${{station.premium}} for premium.
         </p>
         {% if station.cards_accepted == 'TRUE' %}
         <p class="card-text">

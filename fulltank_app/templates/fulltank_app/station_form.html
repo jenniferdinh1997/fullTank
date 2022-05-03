@@ -10,9 +10,17 @@
   <form  action="" method="POST">
     {% csrf_token %}
     <p>
-      <label for="id_price"></label></th>
-      <input class="fields"type="number" name="price" value="" step="any" required="" id="id_price" placeholder="New price">
-      </p>
+      <label for="id_regular"></label></th>
+      <input class="fields"type="number" name="regular" value="" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
+    </p>
+    <p>
+      <label for="id_midgrade"></label></th>
+      <input class="fields"type="number" name="midgrade" value="" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
+    </p>
+    <p>
+      <label for="id_premium"></label></th>
+      <input class="fields"type="number" name="premium" value="" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
+    </p>
       <br>
     <input type="submit" value="Submit" class="btn btn-secondary">
   </form>
@@ -34,15 +42,23 @@
     </p>
     <p>
     <label for="id_company"></label>
-      <input class="fields" type="text" name="company" maxlength="100" required="" id="id_company" placeholder="company">
+      <input class="fields" type="text" name="company" maxlength="100" required="" id="id_company" placeholder="Company">
     </p>
     <p>
     <label for="id_date"></label> 
       <input class="fields" type="date" name="date" required="" id="id_date">
     </p>
     <p>
-    <label for="id_price"></label>
-    <input class="fields" type="number" name="price" step="any" required="" id="id_price" placeholder="price">
+    <label for="id_regular"></label>
+    <input class="fields" type="number" name="regular" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
+   </p>
+   <p>
+    <label for="id_midgrade"></label>
+    <input class="fields" type="number" name="midgrade" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
+   </p>
+   <p>
+    <label for="id_premium"></label>
+    <input class="fields" type="number" name="premium" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
    </p>
    <p>
     <label for="id_cards_accepted"></label>
@@ -52,7 +68,7 @@
 </select>
    </p>
     <label for="id_zipcode"></label>
-      <input class ="fields" type="number" name="zipcode" required="" id="id_zipcode" placeholder="zipcode">
+      <input class ="fields" type="number" name="zipcode" required="" id="id_zipcode" placeholder="Zipcode">
     <br>
     <br>
     <input type="submit" value="Submit" class="btn btn-secondary">

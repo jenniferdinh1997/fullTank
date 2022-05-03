@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 # Create your models here.
 
 CARDS_ACCEPTED = (
@@ -12,7 +13,9 @@ class Station(models.Model):
   name = models.CharField(max_length = 100)
   company = models.CharField(max_length = 100)
   date = models.DateField('Date Of Visit')
-  price = models.FloatField()
+  regular = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(20.0)])
+  midgrade = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(20.0)])
+  premium = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(20.0)])
   cards_accepted = models.CharField(
     max_length = 1,
       choices = CARDS_ACCEPTED,
@@ -23,7 +26,7 @@ class Station(models.Model):
 
 
   def __str__(self):
-    str = f"{self.name} on {self.date} is priced at {self.price} id: {self.id}"
+    str = f"{self.name} on {self.date} is priced at {self.regular}, {self.midgrade}, {self.premium} id: {self.id}"
     if self.cards_accepted == 'TRUE':
       str = str + f" and they do accept card payments"
     else:
