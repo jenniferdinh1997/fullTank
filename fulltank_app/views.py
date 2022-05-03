@@ -6,6 +6,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 
 
 # # Add the following import
@@ -21,8 +22,12 @@ class SearchResultsView(ListView):
     model = Station
     template_name = 'search_results.html'
     
-    # def get_queryset(self):
-    #   return Station.objects.filter(name_icontain)
+    def get_queryset(self):
+      query = self.request.GET.get("q")
+      object_list = Station.objects.filter(
+        Q(name__icontains=query) | Q(zipcode__icontains=query) | Q(company__icontains=query)
+      )
+      return object_list
     
 
 class StationCreate(LoginRequiredMixin, CreateView):
