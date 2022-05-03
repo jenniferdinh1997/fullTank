@@ -1,15 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class=" techs title container px-4 px-lg-5 text-center text-black">
-  <h1>All Stations <span>
+<div class="  title container px-4 px-lg-5 text-center text-black">
+  <h1>All Stations </h1>
+  <span>
     <form action="{% url 'search_results' %}" method="get">
-      <input name="q" type="text" placeholder="Search...">
+      <input class="fields" name="q" type="text" placeholder="Search...">
     </form>
-
-  </span></h1>
+  </span>
 </div>
-  </div>
-</section>
 <br>
 {% if stations %} {% for station in stations %}
 <div class="album py-5">
