@@ -43,7 +43,7 @@ def signup(request):
       return redirect('home')
 
     else:
-      error_message = 'Invalid Sign Up - Please try again'
+      error_message = (form.errors.as_text) 
 
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}

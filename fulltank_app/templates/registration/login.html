@@ -1,15 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <div id="deleteform">
-    <div class=" techs title container text-center text-black">
+    <div class=" title container text-center text-black">
 <h1>Log In</h1>
 </div>
 <br>
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-secondary" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
-</form>
+    <p>
+        <label for="id_username" class=""></label>
+        <input  class="fields" type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username" placeholder="Username">
+      </p>
+      <p>
+        <label for="id_password"></label>
+        <input class="fields" type="password" name="password" autocomplete="current-password" required="" id="id_password" placeholder="Password"> 
+      </p><br>
+        <input type="submit" class="btn btn-secondary" value="login">
+        <input type="hidden" name="next" value="">
+    </form>
 </div>
 {% endblock %}

@@ -4,7 +4,7 @@ body,html {
   height: 100%;
 }
 
-h1, h2, p, h3, h4 , h5{
+h1, h2, h3, h4 , h5{
   font-family: 'Eczar', serif;
 }
 
@@ -96,9 +96,9 @@ h1, h2, p, h3, h4 , h5{
 #new-form {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: repeat(2, minmax(auto, 22rem));
-    padding: 60px;
-    padding-left: 36%;
+    padding: 85px;
+    justify-content: center;
+    justify-items: center;
   }
 
 #new-form *{
@@ -109,7 +109,7 @@ h1, h2, p, h3, h4 , h5{
 
 #new-form input[type="submit"] {
     grid-column: span 2;
-    width: 10rem;
+    width: 5rem;
   }
 
 .button {
@@ -156,13 +156,13 @@ footer.footer .social-link:hover {
 
 .service-icon2 {
     border-radius: 120px;
-    height: 15rem;
-    width: 15rem;
+    height: 13rem;
+    width: 13rem;
     display: block;
     line-height: 7.5rem;
     font-size: 2.25rem;
     transition: 0.15s ease-in-out;
-    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.464);
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.464);
   }
 
 
@@ -224,6 +224,51 @@ footer.footer .social-link:hover {
   margin-top: 20px;
   justify-content: space-between;
 }
+
+#formsignup {
+  display: flex;
+  margin-top: 10%;
+  font-size: 14px;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20;
+}
+
+.helptext{
+  font-size:10px;
+  color: #b8b8b8;
+}
+
+.fields{
+  line-height: 1.25;
+  font-size: 1rem;
+  font-family: "HM Sans Regular","HMSansHebrew-Regular","Hiragino Kaku Gothic Pro","MS PGothic",sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  border: 1px solid;
+  border-color: #d0d0d0;
+  height: 48px;
+  padding: 8px;
+  width: 40%;
+}
+
+.errormessage {
+  margin: 0;
+  padding: 0;
+  color:#7b0101;
+  font-size: 10px;
+}
+
+.textcolor{
+  color: #939393;
+}
+
+
+ /* .errorlist {
+   display: flex;
+   position: center;
+ } */
 
   /*
   .name-cards {
