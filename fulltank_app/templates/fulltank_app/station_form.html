@@ -11,15 +11,15 @@
     {% csrf_token %}
     <p>
       <label for="id_regular"></label></th>
-      <input class="fields"type="number" name="regular" value="" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
+      <input class="fields"type="number" min="0" max="20" name="regular" value="" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
     </p>
     <p>
       <label for="id_midgrade"></label></th>
-      <input class="fields"type="number" name="midgrade" value="" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
+      <input class="fields"type="number" min="0" max="20" name="midgrade" value="" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
     </p>
     <p>
       <label for="id_premium"></label></th>
-      <input class="fields"type="number" name="premium" value="" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
+      <input class="fields"type="number" min="0" max="20" name="premium" value="" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
     </p>
       <br>
     <input type="submit" value="Submit" class="btn btn-secondary">
@@ -50,15 +50,15 @@
     </p>
     <p>
     <label for="id_regular"></label>
-    <input class="fields" type="number" name="regular" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
+    <input class="fields" type="number" min="0" max="20" name="regular" step="any" required="" id="id_regular" placeholder="Regular: $0-20">
    </p>
    <p>
     <label for="id_midgrade"></label>
-    <input class="fields" type="number" name="midgrade" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
+    <input class="fields" type="number" min="0" max="20" name="midgrade" step="any" required="" id="id_midgrade" placeholder="Mid-Grade: $0-20">
    </p>
    <p>
     <label for="id_premium"></label>
-    <input class="fields" type="number" name="premium" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
+    <input class="fields" type="number" min="0" max="20" name="premium" step="any" required="" id="id_premium" placeholder="Premium: $0-20">
    </p>
    <p>
     <label for="id_cards_accepted"></label>
