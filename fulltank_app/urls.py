@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import SearchResultsView
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -10,4 +11,5 @@ urlpatterns = [
     path('stations/<int:station_id>/', views.stations_detail, name='detail'),
     path('stations/<int:pk>/update/', views.PriceUpdate.as_view(), name='price_update'),
     path('accounts/signup/', views.signup, name='signup'),
+    path('search/', SearchResultsView.as_view(), name='search_results'),
 ]

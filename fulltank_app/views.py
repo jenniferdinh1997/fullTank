@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Station
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
+from django.views.generic import ListView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 # # Add the following import
 # from django.http import HttpResponse
@@ -14,6 +16,10 @@ def home(request):
   return render(request, 'home.html')
 
 # Create your views here.
+
+class SearchResultsView(ListView):
+    model = Station
+    template_name = 'search_results.html'
 
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
