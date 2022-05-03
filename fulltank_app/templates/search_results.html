@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+  {% for station in object_list %}
+    <li>
+      {{ station.name }}, {{ station.zipcode }}, 
+    </li>
+  {% endfor %}
+</ul>
