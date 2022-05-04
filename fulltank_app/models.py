@@ -9,6 +9,64 @@ CARDS_ACCEPTED = (
   ('F', 'FALSE')
 )
 
+STATES = (
+	('AL', 'ALABAMA'),
+	('AK', 'ALASKA'),
+  ('AS', 'AMERICAN SAMOA'),
+	('AZ', 'ARIZONA'),
+	('CA', 'CALIFORNIA'),
+	('CZ', 'CANAL ZONE'),
+	('CO', 'COLORADO'),
+	('CT', 'CONNECTICUT'),
+	('DE', 'DELAWARE'),
+	('DC', 'DISTRICT OF COLUMBIA'),
+	('FA', 'FLORIDA'),
+	('GA', 'GEORGIA'),
+	('GU', 'GUAM'),
+	('HI', 'HAWAII'),
+	('ID', 'IDAHO'),
+	('IL', 'ILLINOIS'),
+	('IN', 'INDIANA'),
+	('IA', 'IOWA'),
+	('KS', 'KANSAS'),
+	('KY', 'KENTUCKY'),
+	('LA', 'LOUISIANA'),
+	('ME', 'MAINE'),
+	('MD', 'MARYLAND'),
+	('MA', 'MASSACHUSETTS'),
+	('MI', 'MICHIGAN'),
+	('MN', 'MINNESOTA'),
+	('MS', 'MISSISSIPPI'),
+	('MO', 'MISSOURI'),
+	('MT', 'MONTANA'),
+	('NE', 'NEBRASKA'),
+	('NV', 'NEVADA'),
+	('NH', 'NEW HAMPSHIRE'),
+	('NJ', 'NEW JERSEY'),
+	('NM', 'NEW MEXICO'),
+	('NY', 'NEW YORK'),
+	('NC', 'NORTH CAROLINA'),
+	('ND', 'NORTH DAKOTA'),
+	('OH', 'OHIO'),
+	('OK', 'OKLAHOMA'),
+	('OR', 'OREGON'),
+	('PA', 'PENNSYLVANIA'),
+	('PR', 'PUERTO RICO'),
+	('RI', 'RHODE ISLAND'),
+	('SC', 'SOUTH CAROLINA'),
+	('SD', 'SOUTH DAKOTA'),
+	('TN', 'TENNESSEE'),
+	('TX', 'TEXAS'),
+	('UT', 'UTAH'),
+	('VT', 'VERMONT'),
+	('VI', 'VIRGIN ISLANDS'),
+	('VA', 'VIRGINIA'),
+	('WA', 'WASHINGTON'),
+	('WV', 'WEST VIRGINIA'),
+	('WI', 'WISCONSIN'),
+	('WY', 'WYOMING'),
+)
+
 class Station(models.Model):
   name = models.CharField(max_length = 100)
   company = models.CharField(max_length = 100)
@@ -23,10 +81,17 @@ class Station(models.Model):
   )
   zipcode = models.IntegerField()
   user = models.ForeignKey(User, on_delete=models.CASCADE)
+  street = models.CharField(max_length = 100, null=True)
+  city = models.CharField(max_length = 100, null=True)
+  state = models.CharField(
+    max_length = 2,
+    choices = STATES,
+    default = STATES[0][0]
+  )
 
 
   def __str__(self):
-    str = f"{self.name} on {self.date} is priced at {self.regular}, {self.midgrade}, {self.premium} id: {self.id}"
+    str = f"{self.name} at {self.street} on {self.date} is priced at {self.regular}, {self.midgrade}, {self.premium} id: {self.id}"
     if self.cards_accepted == 'TRUE':
       str = str + f" and they do accept card payments"
     else:
