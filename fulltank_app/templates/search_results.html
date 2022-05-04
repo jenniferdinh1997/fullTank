@@ -1,19 +1,41 @@
-<h1>Search Results</h1>
+{% extends 'base.html' %}
+{% block content %}
+  
 
+  
+<div id="formsignup">
+  <div class="container text-center text-black">
+    <h1>Results</h1>
+</div>
+</div>
+<br>
 {% if object_list %}
-
-  <ul>
     {% for station in object_list %}
-      <li>
+    <div class="album py-5">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-sm-3 row-cols-md-1 g-2">
+          <div class="col">
+            <div class="card shadow-sm">
+              <image src="/static/img/gassT.jpg" height="400px"></image>
+              <div class="card-body">
+                <p class="card-text"></p>
         {{ station.name }}, {{ station.zipcode }}, 
-      </li>
-    {% endfor %}
-  </ul>
-
-{% else %}
-
-  <div>
-    <p>No matches found</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="btn-group">
+            <a
+              id="icons"
+              class="btn button"
+              href="{% url 'detail' station.id %}"  >See Details</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-  {% endif %}
+</div>
+</div>
+    {% endfor %}
+{% else %}
+<h1>no matches</h1>
+  {% endif %} {% endblock content %}
