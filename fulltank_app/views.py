@@ -145,3 +145,14 @@ def stations_detail(request, station_id):
 def about(request):
   return render(request, 'about.html')
 
+def sort_regular(request):
+  stations = Station.objects.all().order_by('regular')
+  return render(request, '')
+
+def sort_midgrade(request):
+  stations = Station.objects.all().order_by('midgrade')
+  return render(request, '')
+
+def sort_premium(request):
+  stations = Station.objects.all().order_by('premium')
+  return render(request, '')
