@@ -12,4 +12,5 @@ urlpatterns = [
     path('stations/<int:pk>/update/', views.PriceUpdate.as_view(), name='price_update'),
     path('accounts/signup/', views.signup, name='signup'),
     path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('stations/<int:station_id>/add_photo/', views.add_photo, name='add_photo'),
 ]

@@ -101,3 +101,11 @@ class Station(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'station_id': self.id})
 
+
+class Photo(models.Model):
+  url = models.CharField(max_length=200)
+  station = models.ForeignKey(Station, on_delete=models.CASCADE)
+  
+
+  def __str__(self):
+    return f"Photo for station_id: {self.station_id} @{self.url}"
