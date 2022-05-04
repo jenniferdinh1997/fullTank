@@ -21,14 +21,14 @@ def home(request):
 class SearchResultsView(ListView):
     model = Station
     template_name = 'search_results.html'
-    
+
     def get_queryset(self):
       query = self.request.GET.get("q")
       object_list = Station.objects.filter(
         Q(name__icontains=query) | Q(zipcode__icontains=query) | Q(company__icontains=query)
       )
       return object_list
-    
+
 
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
@@ -48,7 +48,7 @@ def signup(request):
       return redirect('home')
 
     else:
-      error_message = (form.errors.as_text) 
+      error_message = (form.errors.as_text)
 
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
@@ -66,12 +66,25 @@ class PriceUpdate(LoginRequiredMixin, UpdateView):
 def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
-  
+
 @login_required
 def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
-  return render(request, 'stations/detail.html', {'station': station})
+  stationName = 'chevron'.replace(' ', '')
+  strName = '12155 Imperial Hwy'.replace(' ', '')
+  cityName = 'Norwalk'.replace(' ', '')
+  stateName = 'CA'.replace(' ', '')
+  result = f"{stationName}{strName},{cityName}+{stateName}"
+  return render(request, 'stations/detail.html', {'station': station, 'result': result})
 
+
+
+#def toStr(station):
+  #strName = station.street.replace(' ', '')
+  #cityName = station.city.replace(' ', '')
+  #stateName = station.state.replace(' ', '')
+  #result = f"{strName},{cityName}+{stateName}"
+  #reutrn result
 def about(request):
   return render(request, 'about.html')
 
