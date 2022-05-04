@@ -70,7 +70,7 @@ def stations_index(request):
 @login_required
 def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
-  stationName = 'chevron'.replace(' ', '')
+  stationName = station.name.replace(' ', '')
   strName = '12155 Imperial Hwy'.replace(' ', '')
   cityName = 'Norwalk'.replace(' ', '')
   stateName = 'CA'.replace(' ', '')
@@ -85,6 +85,7 @@ def stations_detail(request, station_id):
   #stateName = station.state.replace(' ', '')
   #result = f"{strName},{cityName}+{stateName}"
   #reutrn result
+
 def about(request):
   return render(request, 'about.html')
 
