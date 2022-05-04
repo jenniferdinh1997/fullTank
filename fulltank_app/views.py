@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Station
+from .models import Station, Photo
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.views.generic import ListView
 from django.contrib.auth import login
@@ -7,6 +7,12 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
+
+import boto3
+import uuid
+
+S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
+BUCKET = 'fulltank' 
 
 
 # # Add the following import
@@ -144,3 +150,19 @@ def stations_detail(request, station_id):
 
 def about(request):
   return render(request, 'about.html')
+
+
+
+def add_photo(request, station_id):
+    photo_file = request.FILES.get('photo-file', None)
+    if photo_file:
+        s3 = boto3.client('s3')
+        key = uuid.uuid4().hex[:6] + \
+            photo_file.name[photo_file.name.rfind('.'):]
+        try:
+            s3.upload_fileojb(photo_file, BUCKET, key)
+            url = f"{S3_BASE_URL}{BUCKET}/{key}"
+            Photo.objects.create(url=url, station_id=station_id)
+        except:
+            print('We have an error here uploading to S3')
+    return redirect('detail', station_id=station_id)
