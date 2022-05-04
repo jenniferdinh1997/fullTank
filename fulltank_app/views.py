@@ -11,7 +11,63 @@ from django.db.models import Q
 
 # # Add the following import
 # from django.http import HttpResponse
-
+STATES = (
+	('AL', 'ALABAMA'),
+	('AK', 'ALASKA'),
+  ('AS', 'AMERICAN SAMOA'),
+	('AZ', 'ARIZONA'),
+	('CA', 'CALIFORNIA'),
+	('CZ', 'CANAL ZONE'),
+	('CO', 'COLORADO'),
+	('CT', 'CONNECTICUT'),
+	('DE', 'DELAWARE'),
+	('DC', 'DISTRICT OF COLUMBIA'),
+	('FA', 'FLORIDA'),
+	('GA', 'GEORGIA'),
+	('GU', 'GUAM'),
+	('HI', 'HAWAII'),
+	('ID', 'IDAHO'),
+	('IL', 'ILLINOIS'),
+	('IN', 'INDIANA'),
+	('IA', 'IOWA'),
+	('KS', 'KANSAS'),
+	('KY', 'KENTUCKY'),
+	('LA', 'LOUISIANA'),
+	('ME', 'MAINE'),
+	('MD', 'MARYLAND'),
+	('MA', 'MASSACHUSETTS'),
+	('MI', 'MICHIGAN'),
+	('MN', 'MINNESOTA'),
+	('MS', 'MISSISSIPPI'),
+	('MO', 'MISSOURI'),
+	('MT', 'MONTANA'),
+	('NE', 'NEBRASKA'),
+	('NV', 'NEVADA'),
+	('NH', 'NEW HAMPSHIRE'),
+	('NJ', 'NEW JERSEY'),
+	('NM', 'NEW MEXICO'),
+	('NY', 'NEW YORK'),
+	('NC', 'NORTH CAROLINA'),
+	('ND', 'NORTH DAKOTA'),
+	('OH', 'OHIO'),
+	('OK', 'OKLAHOMA'),
+	('OR', 'OREGON'),
+	('PA', 'PENNSYLVANIA'),
+	('PR', 'PUERTO RICO'),
+	('RI', 'RHODE ISLAND'),
+	('SC', 'SOUTH CAROLINA'),
+	('SD', 'SOUTH DAKOTA'),
+	('TN', 'TENNESSEE'),
+	('TX', 'TEXAS'),
+	('UT', 'UTAH'),
+	('VT', 'VERMONT'),
+	('VI', 'VIRGIN ISLANDS'),
+	('VA', 'VIRGINIA'),
+	('WA', 'WASHINGTON'),
+	('WV', 'WEST VIRGINIA'),
+	('WI', 'WISCONSIN'),
+	('WY', 'WYOMING'),
+)
 # Define the home view
 def home(request):
   return render(request, 'home.html')
@@ -32,7 +88,7 @@ class SearchResultsView(ListView):
 
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
-  fields = ['name', 'company', 'date', 'regular', 'midgrade', 'premium', 'cards_accepted', 'zipcode']
+  fields = ['name', 'company', 'date', 'regular', 'midgrade', 'premium', 'cards_accepted', 'zipcode', 'street', 'city', 'state']
 
   def form_valid(self, form):
     form.instance.user = self.request.user
@@ -71,10 +127,10 @@ def stations_index(request):
 def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
   stationName = station.name.replace(' ', '')
-  strName = '12155 Imperial Hwy'.replace(' ', '')
-  cityName = 'Norwalk'.replace(' ', '')
-  stateName = 'CA'.replace(' ', '')
-  result = f"{stationName}{strName},{cityName}+{stateName}"
+  strName = station.street.replace(' ', '')
+  cityName = station.city.replace(' ', '')
+  stateName = station.state.replace(' ', '')
+  result = f"{stationName}+{strName},{cityName}+{stateName}"
   return render(request, 'stations/detail.html', {'station': station, 'result': result})
 
 
