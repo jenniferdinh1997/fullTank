@@ -12,7 +12,7 @@ import boto3
 import uuid
 
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET = 'fulltank' 
+BUCKET = 'fulltank42' 
 
 
 # # Add the following import
@@ -157,10 +157,9 @@ def add_photo(request, station_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
         s3 = boto3.client('s3')
-        key = uuid.uuid4().hex[:6] + \
-            photo_file.name[photo_file.name.rfind('.'):]
+        key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
         try:
-            s3.upload_fileojb(photo_file, BUCKET, key)
+            s3.upload_fileobj(photo_file, BUCKET, key)
             url = f"{S3_BASE_URL}{BUCKET}/{key}"
             Photo.objects.create(url=url, station_id=station_id)
         except:
