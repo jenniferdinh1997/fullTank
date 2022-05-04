@@ -80,7 +80,7 @@ class SearchResultsView(ListView):
 
     def get_queryset(self):
       query = self.request.GET.get("q")
-      object_list = Station.objects.filter(
+      object_list = Station.objects.order_by('regular', 'midgrade', 'premium').filter(
         Q(name__icontains=query) | Q(zipcode__icontains=query) | Q(company__icontains=query)
       )
       return object_list
@@ -133,7 +133,7 @@ def stations_detail(request, station_id):
   result = f"{stationName}+{strName},{cityName}+{stateName}"
   return render(request, 'stations/detail.html', {'station': station, 'result': result})
 
-
+#elroy's function
 
 #def toStr(station):
   #strName = station.street.replace(' ', '')
@@ -144,4 +144,3 @@ def stations_detail(request, station_id):
 
 def about(request):
   return render(request, 'about.html')
-
