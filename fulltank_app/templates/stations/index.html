@@ -13,14 +13,17 @@
 {% if stations %} {% for station in stations %}
 
 <div class="album py-5 ">
-  
+
   <div class="container ">
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-1 g-2 index-box">
       <div class="col">
         <div class="card shadow-sm">
-          {% for photo in station.photo_set.all %}
+
+          {% if station.photo_set.all|length > 0 %}
+          {% with photo=station.photo_set.all|first %}
           <img height="350" class="responsive-img card-panel" src="{{photo.url}}">
-          {% endfor %}
+          {% endwith %}
+          {% endif %}
           <div class="card-body">
             <p class="card-text"></p>
             <h5>{{ station.name }}</h5>
