@@ -76,7 +76,8 @@ STATES = (
 )
 # Define the home view
 def home(request):
-  return render(request, 'home.html')
+  count = Station.objects.all().count()
+  return render(request, 'home.html', {'count': count})
 
 # Create your views here.
 
@@ -95,7 +96,6 @@ class SearchResultsView(ListView):
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
   fields = ['name', 'company', 'date', 'regular', 'midgrade', 'premium', 'cards_accepted', 'zipcode', 'street', 'city', 'state']
-  @login_required
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -165,3 +165,7 @@ def add_photo(request, station_id):
         except:
             print('We have an error here uploading to S3')
     return redirect('detail', station_id=station_id)
+  
+# def stationCount(request):
+#   count = 4
+#   return render(request, 'home.html', {'count': count})
