@@ -18,7 +18,6 @@
     <div class="row row-cols-1 row-cols-sm-3 row-cols-md-1 g-2 index-box">
       <div class="col">
         <div class="card shadow-sm">
-
           {% if station.photo_set.all|length > 0 %}
           {% with photo=station.photo_set.all|first %}
           <img height="350" class="responsive-img card-panel" src="{{photo.url}}">

@@ -12,7 +12,7 @@ import boto3
 import uuid
 
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET = 'fulltank42'
+BUCKET = 'fulltank'
 
 
 # # Add the following import
@@ -95,7 +95,7 @@ class SearchResultsView(ListView):
 class StationCreate(LoginRequiredMixin, CreateView):
   model = Station
   fields = ['name', 'company', 'date', 'regular', 'midgrade', 'premium', 'cards_accepted', 'zipcode', 'street', 'city', 'state']
-
+  @login_required
   def form_valid(self, form):
     form.instance.user = self.request.user
     return super().form_valid(form)
@@ -152,7 +152,7 @@ def about(request):
   return render(request, 'about.html')
 
 
-
+@login_required
 def add_photo(request, station_id):
     photo_file = request.FILES.get('photo-file', None)
     if photo_file:
