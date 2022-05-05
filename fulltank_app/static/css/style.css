@@ -327,7 +327,7 @@ footer.footer .social-link:hover {
   background-color: #fff;
   padding: 40px 30px 40px 30px;
   border: 1px solid #b8b8b8;
-  border-radius: 1px;
+  border-radius: 10px;
   transition: 0.15s ease-in-out;
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.464);
 } 
