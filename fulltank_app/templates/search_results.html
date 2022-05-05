@@ -23,7 +23,14 @@
               <div class="card-body">
                 <p class="card-text"></p>
                 <h5>{{ station.name }}</h5>
-                <br />
+                <h7>{{ station.street }}</h7>
+                <br>
+                <h9>{{ station.city }}</h9>
+                <h9>{{ station.state }},</h9>
+                <h9>{{ station.zipcode }}</h9>
+                <br>
+                <h9>$<b>{{station.regular}}</b>/Regular</h9>
+                <br><br>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a
