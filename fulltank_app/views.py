@@ -12,7 +12,7 @@ import boto3
 import uuid
 
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
-BUCKET = 'fulltank42' 
+BUCKET = 'fulltank' 
 
 
 # # Add the following import

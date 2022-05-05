@@ -10,12 +10,16 @@
 </div>
 <br>
 {% if stations %} {% for station in stations %}
-<div class="album py-5">
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-1 g-2">
+
+<div class="album py-5 ">
+  
+  <div class="container ">
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-1 g-2 index-box">
       <div class="col">
         <div class="card shadow-sm">
-          <image src="/static/img/gassT.jpg" height="500px"></image>
+          {% for photo in station.photo_set.all %}
+          <img height="350" class="responsive-img card-panel" src="{{photo.url}}">
+          {% endfor %}
           <div class="card-body">
             <p class="card-text"></p>
             <h5>{{ station.name }}</h5>
@@ -36,4 +40,5 @@
     </div>
   </div>
 </div>
+
 {% endfor %} {% endif %} {% endblock %}

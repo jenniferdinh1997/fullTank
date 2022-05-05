@@ -290,3 +290,49 @@ footer.footer .social-link:hover {
   padding-bottom: 30rem;
   font-family: 'HM Sans Regular', serif;
 } */
+
+/* ###  Detail.html and index.html */
+.project-info-box {
+  margin: 30px 0;
+  background-color: #fff;
+  padding: 20px 30px;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.464);
+} 
+  .project-info-box:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translate(0px, -10px) scale(1.05);
+            transform: translate(0px, -10px) scale(1.05);
+  }
+
+.project-info-box p {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d5dadb;
+}
+
+.project-info-box p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.rounded {
+  border-radius: 5px !important;
+}
+
+.index-box{
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 40px 30px 40px 30px;
+  border: 1px solid #b8b8b8;
+  border-radius: 10px;
+  transition: 0.15s ease-in-out;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.464);
+} 
+  .index-box:hover {
+    box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.2);
+    -webkit-transform: translate(0px, -10px) scale(1.0);
+            transform: translate(0px, -10px) scale(1.0);
+  }
