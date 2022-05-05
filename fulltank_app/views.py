@@ -129,7 +129,7 @@ def stations_index(request):
   stations = Station.objects.all()
   return render(request, 'stations/index.html', {'stations': stations})
 
-@login_required
+
 def stations_detail(request, station_id):
   station = Station.objects.get(id=station_id)
   stationName = station.name.replace(' ', '')

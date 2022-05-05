@@ -66,7 +66,9 @@
             </div>
               <p></p>
               <a href=" {% url 'price_update' station.id %} "><button type="button" class="btn btn-secondary"> Update </button></a>
+              {% if user.is_authenticated %}
               <a href="{% url 'stations_delete' station.id %}"><button type="button" class="btn btn-secondary"> Delete </button></a>
+              {% else %}  {% endif %}
               </form>
           </div>
       </div>
