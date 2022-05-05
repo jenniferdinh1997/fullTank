@@ -14,7 +14,7 @@ and never worry about chasing deals again.
 
 ## Screenshots:
 
-insert screenshots of homepage, index, a details page
+![fullTank](img/screenshot.png)
 
 ## Technologies used:
 
