@@ -14,7 +14,7 @@ and never worry about chasing deals again.
 
 ## Screenshots:
 
-![fullTank](img/screenshot.png)
+![fullTank](Screenshot 2022-05-05 at 14.38.19.png)
 
 ## Technologies used:
 
