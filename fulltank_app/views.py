@@ -126,7 +126,8 @@ class PriceUpdate(LoginRequiredMixin, UpdateView):
   fields = ["regular", "midgrade", "premium"]
 
 def stations_index(request):
-  stations = Station.objects.all()
+  s = Station.objects.all()
+  stations = reversed(s)
   return render(request, 'stations/index.html', {'stations': stations})
 
 
@@ -165,7 +166,7 @@ def add_photo(request, station_id):
         except:
             print('We have an error here uploading to S3')
     return redirect('detail', station_id=station_id)
-  
+
 # def stationCount(request):
 #   count = 4
 #   return render(request, 'home.html', {'count': count})
