@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,12 +78,12 @@ WSGI_APPLICATION = 'fulltank.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:Bw50eUW76EIChwUfpGJD@containers-us-west-37.railway.app:6985/railway',
+        'URL': os.getenv('URL'),
         'NAME': 'fulltank',
-        'USER': 'postgres',
-        'PASSWORD': 'Bw50eUW76EIChwUfpGJD',
-        'HOST': 'containers-us-west-37.railway.app',
-        'PORT': '6985'
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT')
     }
 }
 
