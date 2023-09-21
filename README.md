@@ -18,13 +18,14 @@ and never worry about chasing deals again.
 
 ## Technologies used:
 
-Python, Django, Heroku, AWS(?)
+Python, Django, Google Maps API
 
 ## Getting Started:
 
--link to deployed app: https://fulltank.herokuapp.com
+-link to deployed app: https://full-tank.vercel.app/
 -link to Trello board: https://trello.com/b/rIgrWE8p/fulltank
 -link to pitch deck: https://docs.google.com/presentation/d/1LF-O2PsNUlqlJmMvtsfly0gMsAxyj7ULpR77ijJhF1I/edit?usp=sharing
+
 ## Next Steps:
 
 - Add reactive price listings, using an API
