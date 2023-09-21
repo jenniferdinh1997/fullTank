@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-d3(&w0m_kyi_uj9_tkrfera2yr793cg=i)-v69j-iwhgz*a(9!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app"]
+ALLOWED_HOSTS = ["localhost", ".vercel.app"]
 
 
 # Application definition
@@ -77,7 +77,12 @@ WSGI_APPLICATION = 'fulltank.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:Bw50eUW76EIChwUfpGJD@containers-us-west-37.railway.app:6985/railway',
         'NAME': 'fulltank',
+        'USER': 'postgres',
+        'PASSWORD': 'Bw50eUW76EIChwUfpGJD',
+        'HOST': 'containers-us-west-37.railway.app',
+        'PORT': '6985'
     }
 }
 
