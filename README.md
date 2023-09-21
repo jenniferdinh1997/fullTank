@@ -12,9 +12,9 @@ of user-added gas stations across the state.
 Sign up, find the cheapest gas station near you,
 and never worry about chasing deals again.
 
-## Screenshots:
+## App Preview:
 
-![fullTank](/img/screenshot.png)
+![fullTank](home.png)
 
 ## Technologies used:
 
@@ -22,9 +22,9 @@ Python, Django, Google Maps API
 
 ## Getting Started:
 
--link to deployed app: https://full-tank.vercel.app/
--link to Trello board: https://trello.com/b/rIgrWE8p/fulltank
--link to pitch deck: https://docs.google.com/presentation/d/1LF-O2PsNUlqlJmMvtsfly0gMsAxyj7ULpR77ijJhF1I/edit?usp=sharing
+- Deployed app: https://full-tank.vercel.app/
+- Trello board: https://trello.com/b/rIgrWE8p/fulltank
+- Pitch deck: https://docs.google.com/presentation/d/1LF-O2PsNUlqlJmMvtsfly0gMsAxyj7ULpR77ijJhF1I/edit?usp=sharing
 
 ## Next Steps:
 
